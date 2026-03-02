@@ -52,10 +52,10 @@ nav a:hover{color:#e8a020}
 .hero-content{position:relative;z-index:2;padding:4rem 0 6rem}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
 .hero-left{display:flex;flex-direction:column}
-.hero-right{display:flex;align-items:center;justify-content:center;position:relative}
-.hero-car-wrap{position:relative;width:100%;max-width:580px}
-.hero-car-wrap::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70%;height:50%;background:radial-gradient(ellipse,rgba(232,160,32,.18) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-.hero-car-svg{width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6))}
+.hero-right{display:flex;align-items:flex-end;justify-content:center;position:relative;overflow:hidden;margin-bottom:-6rem}
+.hero-car-wrap{position:relative;width:100%}
+.hero-car-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(232,160,32,.08) 0%,transparent 65%);pointer-events:none;z-index:1}
+.hero-truck-img{width:100%;height:auto;display:block;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 30px 60px rgba(0,0,0,.8)) drop-shadow(0 0 40px rgba(0,0,0,.6));position:relative;z-index:2;transform:scale(1.06) translateX(3%);transform-origin:bottom center}
 .hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.3);border-radius:3px;padding:.4rem 1rem;font-size:.8125rem;font-weight:600;color:#e8a020;letter-spacing:.1em;text-transform:uppercase;font-family:'Montserrat',sans-serif;margin-bottom:2rem}
 .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4.5vw,4rem);font-weight:900;color:#fff;line-height:1.05;margin-bottom:1.5rem}
 .hero h1 span{color:#e8a020}
@@ -278,192 +278,10 @@ footer{background:#090b0d;border-top:1px solid #141618;padding:4rem 0 2rem}
             </a>
           </div>
         </div>
-        <!-- ═══ MERCEDES SPRINTER ILLUSTRATION ═══ -->
+        <!-- ═══ TRUCK PHOTO ═══ -->
         <div class="hero-right reveal delay-3">
           <div class="hero-car-wrap">
-            <svg class="hero-car-svg" viewBox="0 0 580 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="bodyGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#262b34"/>
-                  <stop offset="100%" stop-color="#181b21"/>
-                </radialGradient>
-                <radialGradient id="wheelGrad" cx="40%" cy="35%" r="60%">
-                  <stop offset="0%" stop-color="#2c3040"/>
-                  <stop offset="100%" stop-color="#111318"/>
-                </radialGradient>
-                <radialGradient id="groundGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#e8a020" stop-opacity="0.2"/>
-                  <stop offset="100%" stop-color="#e8a020" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#90c8f0" stop-opacity="0.12"/>
-                  <stop offset="100%" stop-color="#6090b8" stop-opacity="0.05"/>
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-
-              <!-- Ground glow -->
-              <ellipse cx="295" cy="208" rx="240" ry="16" fill="url(#groundGlow)"/>
-              <!-- Ground shadow under van -->
-              <ellipse cx="295" cy="210" rx="210" ry="9" fill="rgba(0,0,0,.55)"/>
-              <!-- Ground line -->
-              <line x1="20" y1="205" x2="560" y2="205" stroke="rgba(232,160,32,.2)" stroke-width="1" stroke-dasharray="6 8"/>
-
-              <!-- ═ REAR BUMPER ═ -->
-              <rect x="500" y="175" width="38" height="18" rx="3" fill="#1e2128" stroke="#2e3340" stroke-width="1.5"/>
-              <!-- Rear fog/reflector strips -->
-              <rect x="504" y="178" width="30" height="5" rx="1.5" fill="rgba(255,80,80,.08)" stroke="rgba(255,100,100,.2)" stroke-width="1"/>
-              <rect x="504" y="185" width="30" height="5" rx="1.5" fill="rgba(255,220,50,.06)" stroke="rgba(255,230,100,.15)" stroke-width="1"/>
-
-              <!-- ═ CARGO BODY ═ -->
-              <rect x="148" y="52" width="355" height="140" rx="5" fill="url(#bodyGrad)" stroke="#2e3340" stroke-width="1.5"/>
-              <!-- Cargo body highlight (top edge) -->
-              <rect x="150" y="52" width="351" height="4" rx="2" fill="rgba(255,255,255,.04)"/>
-              <!-- Cargo body bottom rail -->
-              <rect x="148" y="182" width="355" height="8" rx="2" fill="#1a1d24" stroke="#2a2d36" stroke-width="1"/>
-
-              <!-- ═ FRONT CABIN ═ -->
-              <!-- Main cabin shape -->
-              <path d="M58 193 L58 128 L62 118 L88 72 L148 54 L148 193 Z" fill="url(#bodyGrad)" stroke="#2e3340" stroke-width="1.5"/>
-              <!-- Cabin front face -->
-              <path d="M48 193 L48 148 L58 128 L58 193 Z" fill="#1a1d24" stroke="#2e3340" stroke-width="1.5"/>
-              <!-- Cabin roof blend -->
-              <path d="M88 72 L148 54 L148 60 L92 78 Z" fill="rgba(255,255,255,.03)"/>
-
-              <!-- ═ WINDSHIELD ═ -->
-              <path d="M65 125 L90 76 L146 58 L146 125 Z" fill="url(#glassGrad)" stroke="rgba(200,225,255,.18)" stroke-width="1.2"/>
-              <!-- Windshield reflection diagonal -->
-              <path d="M70 120 L92 82 L115 73" stroke="rgba(255,255,255,.07)" stroke-width="2" stroke-linecap="round"/>
-              <!-- Windshield divider -->
-              <line x1="105" y1="60" x2="86" y2="125" stroke="rgba(200,225,255,.12)" stroke-width="1"/>
-              <!-- Wiper -->
-              <line x1="72" y1="118" x2="127" y2="68" stroke="rgba(255,255,255,.12)" stroke-width="1.5" stroke-linecap="round"/>
-
-              <!-- ═ SIDE WINDOWS ═ -->
-              <!-- Cabin side window -->
-              <rect x="152" y="64" width="52" height="40" rx="3" fill="url(#glassGrad)" stroke="rgba(200,225,255,.15)" stroke-width="1"/>
-              <!-- Window reflection -->
-              <path d="M154 66 L180 66 L168 80 L154 80 Z" fill="rgba(255,255,255,.04)"/>
-              <!-- Small vent window in cabin -->
-              <rect x="160" y="112" width="30" height="22" rx="2" fill="url(#glassGrad)" stroke="rgba(200,225,255,.1)" stroke-width="1"/>
-
-              <!-- ═ DOOR LINES ═ -->
-              <!-- Cab-to-cargo divider -->
-              <line x1="148" y1="56" x2="148" y2="190" stroke="#3a3f4c" stroke-width="2"/>
-              <!-- Front cargo door -->
-              <line x1="285" y1="56" x2="285" y2="190" stroke="#2a2e38" stroke-width="1.5"/>
-              <!-- Rear door -->
-              <line x1="420" y1="56" x2="420" y2="190" stroke="#2a2e38" stroke-width="1.5"/>
-              <!-- Rear door center -->
-              <line x1="500" y1="56" x2="500" y2="190" stroke="#2e3340" stroke-width="2"/>
-              <!-- Horizontal waist line -->
-              <line x1="58" y1="135" x2="502" y2="135" stroke="rgba(232,160,32,.18)" stroke-width="1"/>
-              <!-- Body crease line -->
-              <line x1="148" y1="118" x2="500" y2="118" stroke="rgba(255,255,255,.04)" stroke-width="2"/>
-
-              <!-- ═ SIDE MIRROR ═ -->
-              <path d="M62 102 L78 98 L78 112 L62 115 Z" fill="#1e2128" stroke="#2e3340" stroke-width="1"/>
-              <rect x="64" y="103" width="12" height="9" rx="1" fill="rgba(100,140,180,.12)" stroke="rgba(200,225,255,.1)" stroke-width=".5"/>
-              <!-- Mirror arm -->
-              <line x1="62" y1="108" x2="56" y2="115" stroke="#2e3340" stroke-width="2" stroke-linecap="round"/>
-
-              <!-- ═ DOOR HANDLES ═ -->
-              <rect x="130" y="128" width="16" height="5" rx="2.5" fill="#3a3f4c" stroke="rgba(232,160,32,.3)" stroke-width="1"/>
-              <rect x="260" y="130" width="18" height="5" rx="2.5" fill="#3a3f4c" stroke="rgba(232,160,32,.2)" stroke-width="1"/>
-              <rect x="395" y="130" width="18" height="5" rx="2.5" fill="#3a3f4c" stroke="rgba(232,160,32,.2)" stroke-width="1"/>
-              <rect x="468" y="118" width="16" height="5" rx="2.5" fill="#3a3f4c" stroke="rgba(232,160,32,.2)" stroke-width="1"/>
-
-              <!-- ═ HEADLIGHTS ═ -->
-              <!-- Main headlight -->
-              <rect x="46" y="140" width="24" height="18" rx="4" fill="rgba(255,240,140,.07)" stroke="rgba(232,160,32,.55)" stroke-width="1.5"/>
-              <rect x="49" y="143" width="12" height="10" rx="2" fill="rgba(255,240,140,.25)"/>
-              <rect x="49" y="143" width="12" height="4" rx="1" fill="rgba(255,255,200,.18)"/>
-              <!-- DRL strip -->
-              <rect x="46" y="136" width="24" height="4" rx="2" fill="rgba(255,240,140,.2)" stroke="rgba(232,160,32,.4)" stroke-width="1"/>
-              <!-- Headlight beam glow -->
-              <ellipse cx="34" cy="149" rx="30" ry="14" fill="rgba(255,245,160,.05)"/>
-
-              <!-- ═ TAIL LIGHTS ═ -->
-              <rect x="500" y="110" width="14" height="40" rx="3" fill="rgba(220,50,50,.08)" stroke="rgba(220,80,80,.35)" stroke-width="1.5"/>
-              <rect x="502" y="112" width="10" height="16" rx="2" fill="rgba(220,50,50,.2)"/>
-              <rect x="502" y="130" width="10" height="8" rx="1.5" fill="rgba(255,220,50,.15)"/>
-              <rect x="502" y="140" width="10" height="8" rx="1.5" fill="rgba(220,50,50,.12)"/>
-
-              <!-- ═ FRONT GRILLE ═ -->
-              <rect x="48" y="158" width="22" height="26" rx="2" fill="#181b22" stroke="#2a2e38" stroke-width="1"/>
-              <line x1="51" y1="163" x2="68" y2="163" stroke="#2e3340" stroke-width="1" stroke-dasharray="3 3"/>
-              <line x1="51" y1="168" x2="68" y2="168" stroke="#2e3340" stroke-width="1" stroke-dasharray="3 3"/>
-              <line x1="51" y1="173" x2="68" y2="173" stroke="#2e3340" stroke-width="1" stroke-dasharray="3 3"/>
-              <line x1="51" y1="178" x2="68" y2="178" stroke="#2e3340" stroke-width="1" stroke-dasharray="3 3"/>
-              <!-- Front bumper lower -->
-              <rect x="44" y="183" width="32" height="10" rx="2" fill="#1a1d24" stroke="#2e3340" stroke-width="1"/>
-
-              <!-- ═ MERCEDES STAR BADGE ═ -->
-              <circle cx="70" cy="100" r="11" fill="#1a1d24" stroke="rgba(232,160,32,.5)" stroke-width="1.2" filter="url(#glow)"/>
-              <!-- 3-pointed star -->
-              <path d="M70 90 L72 98 L80 100 L72 102 L70 110 L68 102 L60 100 L68 98 Z" fill="none" stroke="rgba(232,160,32,.7)" stroke-width="1" stroke-linejoin="round"/>
-              <circle cx="70" cy="100" r="2.5" fill="rgba(232,160,32,.8)"/>
-
-              <!-- ═ WHEEL ARCHES ═ -->
-              <!-- Front arch -->
-              <path d="M78 193 Q78 162 110 162 Q142 162 142 193" fill="#12141a" stroke="#2a2e38" stroke-width="1.5"/>
-              <!-- Rear arch -->
-              <path d="M392 193 Q392 160 428 160 Q464 160 464 193" fill="#12141a" stroke="#2a2e38" stroke-width="1.5"/>
-
-              <!-- ═ WHEELS ═ -->
-              <!-- FRONT WHEEL -->
-              <circle cx="110" cy="196" r="30" fill="url(#wheelGrad)" stroke="#2e3340" stroke-width="2"/>
-              <circle cx="110" cy="196" r="22" fill="#181b22" stroke="#252930" stroke-width="1.5"/>
-              <!-- Spokes -->
-              <line x1="110" y1="174" x2="110" y2="185" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="110" y1="207" x2="110" y2="218" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="88" y1="196" x2="99" y2="196" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="121" y1="196" x2="132" y2="196" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="94" y1="180" x2="101" y2="187" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="119" y1="205" x2="126" y2="212" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="119" y1="180" x2="126" y2="187" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="94" y1="205" x2="101" y2="212" stroke="#3a3f4c" stroke-width="2"/>
-              <!-- Hub cap -->
-              <circle cx="110" cy="196" r="10" fill="#1e2228" stroke="rgba(232,160,32,.4)" stroke-width="1.5"/>
-              <circle cx="110" cy="196" r="3.5" fill="rgba(232,160,32,.6)"/>
-
-              <!-- REAR WHEEL -->
-              <circle cx="428" cy="196" r="30" fill="url(#wheelGrad)" stroke="#2e3340" stroke-width="2"/>
-              <circle cx="428" cy="196" r="22" fill="#181b22" stroke="#252930" stroke-width="1.5"/>
-              <!-- Spokes -->
-              <line x1="428" y1="174" x2="428" y2="185" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="428" y1="207" x2="428" y2="218" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="406" y1="196" x2="417" y2="196" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="439" y1="196" x2="450" y2="196" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="412" y1="180" x2="419" y2="187" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="437" y1="205" x2="444" y2="212" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="437" y1="180" x2="444" y2="187" stroke="#3a3f4c" stroke-width="2"/>
-              <line x1="412" y1="205" x2="419" y2="212" stroke="#3a3f4c" stroke-width="2"/>
-              <!-- Hub cap -->
-              <circle cx="428" cy="196" r="10" fill="#1e2228" stroke="rgba(232,160,32,.4)" stroke-width="1.5"/>
-              <circle cx="428" cy="196" r="3.5" fill="rgba(232,160,32,.6)"/>
-
-              <!-- ═ SPEC CALLOUT — 1.5t ═ -->
-              <line x1="320" y1="52" x2="320" y2="30" stroke="rgba(232,160,32,.35)" stroke-width="1" stroke-dasharray="3 4"/>
-              <rect x="284" y="16" width="72" height="20" rx="10" fill="rgba(232,160,32,.12)" stroke="rgba(232,160,32,.4)" stroke-width="1"/>
-              <circle cx="292" cy="26" r="6" fill="rgba(232,160,32,.2)" stroke="rgba(232,160,32,.5)" stroke-width="1"/>
-              <text x="292" y="29.5" font-family="Montserrat,sans-serif" font-size="7" font-weight="800" fill="#e8a020" text-anchor="middle">т</text>
-              <text x="337" y="30" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="700" fill="#e8a020" text-anchor="middle">до 1.5 тонн</text>
-
-              <!-- ═ SPEC CALLOUT — 6m ═ -->
-              <!-- Double-ended arrow under van -->
-              <line x1="148" y1="218" x2="503" y2="218" stroke="rgba(232,160,32,.3)" stroke-width="1"/>
-              <line x1="148" y1="213" x2="148" y2="223" stroke="rgba(232,160,32,.3)" stroke-width="1"/>
-              <line x1="503" y1="213" x2="503" y2="223" stroke="rgba(232,160,32,.3)" stroke-width="1"/>
-              <rect x="295" y="211" width="50" height="16" rx="8" fill="rgba(232,160,32,.12)" stroke="rgba(232,160,32,.35)" stroke-width="1"/>
-              <text x="320" y="222" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="700" fill="#e8a020" text-anchor="middle">6 м кузов</text>
-
-              <!-- ═ BRAND LABEL ═ -->
-              <text x="290" y="42" font-family="Montserrat,sans-serif" font-size="8.5" font-weight="700" fill="rgba(232,160,32,.55)" letter-spacing="3.5" text-anchor="middle">MERCEDES-BENZ SPRINTER</text>
-            </svg>
+            <img src="hero-truck.jpg" alt="Грузовой автомобиль" class="hero-truck-img">
           </div>
         </div>
       </div>
